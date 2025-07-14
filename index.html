@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add to Cart</title>
+    <link href="./src/output.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-100 text-black overflow-x-hidden">
+    <div class="min-h-full min-w-full bg-gray-800 flex flex-row justify-between relative">
+        <div id="cartIcon"
+            class="fixed bg-green-600 p-4 rounded-[50%] cursor-pointer scale-95 text-xl transition-all bottom-40 left-90 shadow-black shadow-xl opacity-0">
+            🛒</div>
+        <div id="container" class="w-full max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- Product Card 1 -->
+            <div class="max-h-[30rem] bg-white shadow-md rounded-2xl p-4 flex flex-col items-center">
+                <img src="https://media.istockphoto.com/id/173239968/photo/skinny-tight-blue-jeans-on-white-background.jpg?s=612x612&w=0&k=20&c=HsI-xC12KkzjeCaFC4eQ33SZuL53EerbfLMkPuLpaVw="
+                    alt="pant" class="h-72 w-full object-cover rounded-xl mb-2" />
+                <h4 class="text-lg font-semibold">Product Name: <span>Pant</span></h4>
+                <p class="text-gray-700">Price: ₹<span>200</span></p>
+                <button
+                    class="mt-3 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black border border-transparent hover:border-black transition-all">
+                    Add To Cart
+                </button>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="max-h-[30rem] bg-white shadow-md rounded-2xl p-4 flex flex-col items-center">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQjBSHQhKx9_SstwUv_8l5SII_AhddAcHQK5PN0aOhE_dByRKynOh4hXaTM14o2fNqm6PS1fXDHDEFMYzMEaUxpDe7PJDrJ7KUN71sAbJjQ6guzY3lwYAwZ"
+                    alt="t-shirt" class="h-72 w-full object-contain rounded-xl mb-2" />
+                <h4 class="text-lg font-semibold">Product Name: <span>Batman T-Shirt</span></h4>
+                <p class="text-gray-700">Price: ₹<span>700</span></p>
+                <button
+                    class="mt-3 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black border border-transparent hover:border-black transition-all">
+                    Add To Cart
+                </button>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="max-h-[30rem] bg-white shadow-md rounded-2xl p-4 flex flex-col items-center">
+                <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSXFLaDBtKh2CX9_7cSfEwfqB-yqnZ5FU5wudqpWClmsOIOF5sCDwVJc_XPrsKwvh-rxLC10ZMeZTZvf46Q7wp1tFMYViqQfLU9ETGfuBS6aVkQsUA6ZLDn"
+                    alt="shoes" class="h-72 w-full object-cover rounded-xl mb-2" />
+                <h4 class="text-lg font-semibold">Product Name: <span>Adidas Shoes</span></h4>
+                <p class="text-gray-700">Price: ₹<span>800</span></p>
+                <button
+                    class="mt-3 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black border border-transparent hover:border-black transition-all">
+                    Add To Cart
+                </button>
+            </div>
+
+        </div>
+
+        <div class="opacity-0 scale-95 transition-all duration-500 hidden transform bg-white p-2 w-40 sm:w-full max-w-sm rounded-lg shadow-xl overflow-y-auto"
+            id="addToCartContainer">
+            <div
+                class="h-full flex flex-col justify-between items-center sm:justify-between md:justify-between sm:items-center">
+
+                <!-- Close Button -->
+                <div class="w-8 h-8 flex items-center justify-center bg-black text-white text-sm font-bold rounded-full cursor-pointer hover:bg-white hover:text-black hover:border hover:border-black transition-all self-end"
+                    id="hideCartButton">
+                    X
+                </div>
+
+                <!-- Cart Items -->
+                <div class="flex flex-col gap-3 items-center md:items-end" id="cardContainer">
+
+                    <!-- Card 1 -->
+                    <!-- <div class="flex flex-col sm:flex-row sm:items-start gap-3 bg-orange-500 p-3 rounded-lg shadow-inner w-full">
+                        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQjBSHQhKx9_SstwUv_8l5SII_AhddAcHQK5PN0aOhE_dByRKynOh4hXaTM14o2fNqm6PS1fXDHDEFMYzMEaUxpDe7PJDrJ7KUN71sAbJjQ6guzY3lwYAwZ"
+                            alt="Batman T-Shirt" class="w-20 h-20 sm:w-16 sm:h-16 object-cover rounded-md shadow" />
+                        
+                        <div class="flex-1 text-white sm:overflow-hidden sm:w-full">
+                            <h5 class="text-base font-semibold leading-tight sm:text-sm">Batman T-Shirt</h5>
+                            <p class="text-sm sm:text-xs mt-1">Price: ₹700</p>
+                    
+                            <div class="flex items-center gap-2 mt-2">
+                                <button class="bg-white text-black px-2 rounded font-bold hover:bg-black hover:text-white border border-black">+</button>
+                                <p class="text-white font-semibold min-w-[1rem] text-center">0</p>
+                                <button class="bg-white text-black px-2 rounded font-bold hover:bg-black hover:text-white border border-black">-</button>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Card 2 -->
+                    <!-- <div class="flex flex-col sm:flex-row sm:items-start gap-3 bg-orange-500 p-3 rounded-lg shadow-inner w-full">
+                        <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQjBSHQhKx9_SstwUv_8l5SII_AhddAcHQK5PN0aOhE_dByRKynOh4hXaTM14o2fNqm6PS1fXDHDEFMYzMEaUxpDe7PJDrJ7KUN71sAbJjQ6guzY3lwYAwZ"
+                            alt="Batman T-Shirt" class="w-20 h-20 sm:w-16 sm:h-16 object-cover rounded-md shadow" />
+                        
+                        <div class="flex-1 text-white sm:overflow-hidden sm:w-full">
+                            <h5 class="text-base font-semibold leading-tight sm:text-sm">Batman T-Shirt</h5>
+                            <p class="text-sm sm:text-xs mt-1">Price: ₹700</p>
+                    
+            
+                            <div class="flex items-center gap-2 mt-2">
+                                <button class="bg-white text-black px-2 rounded font-bold hover:bg-black hover:text-white border border-black">+</button>
+                                <p class="text-white font-semibold min-w-[1rem] text-center">0</p>
+                                <button class="bg-white text-black px-2 rounded font-bold hover:bg-black hover:text-white border border-black">-</button>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+
+                <!-- Total Section -->
+                <div
+                    class="w-full bg-gray-800 flex items-center justify-between p-3 rounded-lg shadow-inner text-white mt-4">
+                    <h5 class="text-sm font-semibold sm:text-sm" id="totalContainer_H5">
+                        Total:
+                    </h5>
+                    <p id="showingTotal" class="text-lg font-bold sm:text-sm">1400</p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <script>
+        const buttonAll = document.querySelectorAll('button');
+        const addToCartContainer = document.querySelector('#addToCartContainer')
+        const cardContainer = document.querySelector('#cardContainer')
+        const showingTotal = document.querySelector('#showingTotal')
+        const hideCartButton = document.querySelector('#hideCartButton')
+    
+        let cartItems = {};
+        let currentValue = 0;
+    
+        hideCartButton.addEventListener('click', () => {
+            addToCartContainer.classList.add("opacity-0", "scale-95");
+            setTimeout(() => {
+                addToCartContainer.classList.add("hidden");
+            }, 500);
+        });
+    
+        buttonAll.forEach((e) => {
+            if (e.textContent.trim() === "Add To Cart") {
+                e.addEventListener('click', (item) => {
+                    addToCartContainer.classList.remove("hidden");
+                    setTimeout(() => {
+                        addToCartContainer.classList.remove("opacity-0", "scale-95");
+                    }, 10);
+    
+                    let card = item.target.closest('div');
+                    let imgSrc = card.querySelector('img').src;
+                    let product_name = card.querySelector('h4 span').textContent;
+                    let price = parseFloat(card.querySelector('p span').textContent);
+    
+                    if (cartItems[product_name]) {
+                        cartItems[product_name].quantity++;
+                        cartItems[product_name].qtyElem.textContent = cartItems[product_name].quantity;
+                    } else {
+                        creatingAddToContainer(imgSrc, product_name, price);
+                    }
+    
+                    updateTotal();
+                });
+            }
+        });
+    
+        function creatingAddToContainer(imgSrc, product_name, price) {
+            let quantity = 1;
+            const addToContainerCard = document.createElement('div');
+            addToContainerCard.className = "flex flex-col sm:flex-row sm:items-start gap-3 bg-orange-500 p-3 rounded-lg shadow-inner w-full";
+    
+            const imgTag = document.createElement('img');
+            imgTag.src = imgSrc;
+            imgTag.className = "w-20 h-20 sm:w-16 sm:h-16 object-cover rounded-md shadow";
+    
+            const textContainer = document.createElement('div');
+            textContainer.className = "flex-1 text-white sm:overflow-hidden sm:w-full";
+    
+            const h5 = document.createElement('h5');
+            h5.className = "text-base font-semibold leading-tight sm:text-sm";
+            h5.textContent = product_name;
+    
+            const p = document.createElement('p');
+            p.className = "text-sm sm:text-xs mt-1";
+            p.textContent = `Price: ₹${price}`;
+    
+            const quantityDiv = document.createElement('div');
+            quantityDiv.className = "flex items-center gap-2 mt-2";
+    
+            const addButton = document.createElement('button');
+            addButton.className = "bg-white text-black px-2 rounded font-bold hover:bg-black hover:text-white border border-black";
+            addButton.textContent = "+";
+    
+            const quantityShowText = document.createElement('p');
+            quantityShowText.className = "text-white font-semibold min-w-[1rem] text-center";
+            quantityShowText.textContent = quantity;
+    
+            const subButton = document.createElement('button');
+            subButton.className = "bg-white text-black px-2 rounded font-bold hover:bg-black hover:text-white border border-black";
+            subButton.textContent = "-";
+    
+            // Events for + and - buttons
+            addButton.addEventListener('click', () => {
+                cartItems[product_name].quantity++;
+                quantityShowText.textContent = cartItems[product_name].quantity;
+                updateTotal();
+            });
+    
+            subButton.addEventListener('click', () => {
+                cartItems[product_name].quantity--;
+                if (cartItems[product_name].quantity <= 0) {
+                    cardContainer.removeChild(cartItems[product_name].element);
+                    delete cartItems[product_name];
+                } else {
+                    quantityShowText.textContent = cartItems[product_name].quantity;
+                }
+                updateTotal();
+            });
+    
+            cardContainer.appendChild(addToContainerCard);
+            addToContainerCard.appendChild(imgTag);
+            addToContainerCard.appendChild(textContainer);
+            textContainer.appendChild(h5);
+            textContainer.appendChild(p);
+            textContainer.appendChild(quantityDiv);
+            quantityDiv.appendChild(addButton);
+            quantityDiv.appendChild(quantityShowText);
+            quantityDiv.appendChild(subButton);
+    
+            cartItems[product_name] = {
+                price: price,
+                quantity: quantity,
+                qtyElem: quantityShowText,
+                element: addToContainerCard
+            };
+        }
+    
+        function updateTotal() {
+            let total = 0;
+            for (let item in cartItems) {
+                total += cartItems[item].price * cartItems[item].quantity;
+            }
+            showingTotal.textContent = "₹" + total;
+            currentValue = total;
+        }
+    </script>
+    
+</body>
+
+</html>
